@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sample.webproject</groupId>
-  <artifactId>Vaishakh-Practise</artifactId>
+  <artifactId>1_Vaishakh-Practise</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>Vaishakh-Practise Maven Webapp</name>
+  <name>1_Vaishakh-Practise Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -16,7 +16,7 @@
     </dependency>
   </dependencies>
   <build>
-  <finalName>Vaishakh-Practise</finalName>
+  <finalName>1_Vaishakh-Practise</finalName>
   <pluginManagement>
     <plugins>
       <plugin>
