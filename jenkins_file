@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+	tools {
+	  maven 'Maven home'
+	} 
+    stages {
+        stage('SCM Checkout') {
+            steps {
+                git branch: 'main', credentialsId: 'Git-credential-Vaishakh', url: 'https://github.com/vaishakhs/Tomcat-Jenkins.git'
+            }
+        }
+        stage('Maven clean compile') {
+            steps {
+                sh "mvn compile"
+            }
+        }
+        stage('Maven Package') {
+            steps {
+                sh "mvn package"
+            }
+        }
+        stage('Tomcat-Deployment') {
+            steps {
+				sshagent(['Tomcat']) {
+					sh "scp -o StrictHostKeyChecking=no target/1_Vaishakh-Practise.war ec2-user@54.162.69.202:/opt/Tomcat-Jenkins/webapps"
+				}
+
+            }
+        }
+    }
+}
